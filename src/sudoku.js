@@ -19,7 +19,7 @@ function saveEmptyPositions(brd){
 };
 
 function checkRow(brd, row, val){
-  for(var i = 0; i < brd[row].length; ){
+  for(var i = 0; i < brd[row].length; i++){
     if(brd[row][i] === val){return false;}
   }
   
@@ -34,7 +34,7 @@ function checkColumn(brd, column, val){
   return true;
 }
 
-function check3x3Square(brd, column, row, val){
+function check3x3Square(brd, row, column, val){
   var columnCorner = 0,
     rowCorner = 0,
     squareSize = 3;
@@ -64,9 +64,21 @@ function checkValue(brd, row, column, val){
   }
 }
 
+function checkSimilarArray(a,b){
+  if (a.length !== b.length){return false;}
+  
+  for(var i = 0; i<a.length; i++){
+    for(var j = 0; j < a[i].length; j++){
+      if (a[i][j] !== b[i][j]){return false;}
+    }
+  }
+  
+  return true;
+}
+
 function solvePuzzle(brd, emptyPositions){
   var limit = 9,
-    i, row, column, val, found;
+    i, row, column, val, found, originalBoard = brd;
     
   for(i = 0; i < emptyPositions.length; i++){
     row = emptyPositions[i][0];
@@ -95,8 +107,7 @@ function solvePuzzle(brd, emptyPositions){
   brd.forEach(function(row){
     console.log(row.join());
   });
-  
-  return brd;
+
 }
 
 module.exports = {
