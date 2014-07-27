@@ -78,13 +78,15 @@ function checkSimilarArray(a,b){
 
 function solvePuzzle(brd, emptyPositions){
   var limit = 9,
-    i, row, column, val, found, originalBoard = brd;
+    i, row, column, val, found;
     
   for(i = 0; i < emptyPositions.length; i++){
     row = emptyPositions[i][0];
     column = emptyPositions[i][1];
     
     val = brd[row][column] + 1;
+    
+    found = false;
     
     while(!found && val <= limit){
     
@@ -107,6 +109,8 @@ function solvePuzzle(brd, emptyPositions){
   brd.forEach(function(row){
     console.log(row.join());
   });
+  
+  return brd;
 
 }
 

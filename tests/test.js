@@ -104,8 +104,7 @@ describe("Sudoku Solver", function(){
                             [ 7,4,6,3,2,5,8,1,9 ],
                             [ 3,2,8,1,9,6,5,4,7 ]];
                               
-      console.log("Solution \n", solution);
-      //expect(solution).to.eql(expectedSolution)
+      expect(solution).to.eql(expectedSolution)
     });
   });
   
