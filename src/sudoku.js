@@ -77,6 +77,8 @@ function checkSimilarArray(a,b){
 }
 
 function solvePuzzle(brd, emptyPositions){
+  // i shouldnt decrement. it ends up in an infiinite loop from the if conditional
+  //More research on how to use recursion
   var limit = 9,
     i, row, column, val, found;
     
