@@ -1,5 +1,4 @@
-var Chai = require("chai"),
-  expect = Chai.expect,
+var expect = require("chai").expect,
   solver = require("../src/sudoku.js");
   
 describe("Sudoku Solver", function(){
