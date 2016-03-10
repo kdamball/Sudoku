@@ -1,5 +1,5 @@
 {
-  "name": "Sudoku Solver",
+  "name": "Sudoku",
   "dependencies": {
     "mocha": "latest",
     "chai": "latest"
